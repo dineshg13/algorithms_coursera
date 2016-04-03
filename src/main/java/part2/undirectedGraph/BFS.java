@@ -2,6 +2,7 @@ package part2.undirectedGraph;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
+import java.util.Stack;
 
 /**
  * Created by dineshgurumurthy on 3/24/16.
@@ -37,6 +38,28 @@ public class BFS {
             }
         }
 
+    }
+
+    public boolean hasPathTo(int v) {
+        return marked[v];
+    }
+
+    public Stack<Integer> pathTo(int v) {
+        if (!hasPathTo(v)) {
+            return new Stack<>();
+        }
+        Stack<Integer> stack = new Stack<>();
+        stack.push(v);
+
+        for (int x = v; x != s; x = edgeTo[x]) {
+            stack.push(edgeTo[x]);
+
+        }
+        return stack;
+    }
+
+    public int[] getEdgeTo() {
+        return edgeTo;
     }
 
 }

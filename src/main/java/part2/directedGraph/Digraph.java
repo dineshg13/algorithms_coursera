@@ -98,4 +98,15 @@ public class Digraph {
         return sb.toString();
     }
 
+    public String debugString() {
+        StringBuilder builder = new StringBuilder();
+        for (int v = 0; v < V(); v++) {
+            builder.append("\nVertex: " + v + ", Edges to :");
+            for (int w : adj(v)) {
+                builder.append(w + ",");
+            }
+        }
+        return builder.toString();
+    }
+
 }

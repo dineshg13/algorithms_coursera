@@ -15,9 +15,11 @@ public class PrintUtils {
     }
 
     public static void print(Stack stack) {
-        int size = stack.size();
-        for (int x = 0; x < size; x++) {
-            System.out.println(stack.pop());
+        if (stack != null) {
+            int size = stack.size();
+            for (int x = 0; x < size; x++) {
+                System.out.println(stack.pop());
+            }
         }
     }
 
@@ -27,4 +29,13 @@ public class PrintUtils {
         }
     }
 
+    public static void print(boolean[] ar) {
+        for (int i = 0; i < ar.length; i++) {
+            System.out.println(i + " -> " + ar[i]);
+        }
+    }
+
+    public static void printLineBreak() {
+        System.out.println("---------------------");
+    }
 }

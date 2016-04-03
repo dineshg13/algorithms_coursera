@@ -1,5 +1,6 @@
 package part2;
 
+import core.AbstractTest;
 import org.junit.Test;
 import part2.directedGraph.Digraph;
 import part2.directedGraph.StronglyConnected;
@@ -9,14 +10,13 @@ import utils.PrintUtils;
 /**
  * Created by dineshgurumurthy on 3/30/16.
  */
-public class StronglyCCTest {
+public class StronglyCCTest extends AbstractTest {
 
 
     @Test
     public void test() {
 
-        String filePath = "/Users/dineshgurumurthy/dev/coursera/resources/algs4-data";
-        String fileName = filePath + "/" + "tinyDG.txt";
+        String fileName = getFilePath("tinyDG.txt");
         In in = new In(fileName);
         Digraph digraph = new Digraph(in);
 
