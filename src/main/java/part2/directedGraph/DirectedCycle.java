@@ -22,7 +22,7 @@ public class DirectedCycle {
 //        cycle = new Stack<>();
 
         for (int i = 0; i < V; i++) {
-            System.out.println("Processing index:" + i);
+//            System.out.println("Processing index:" + i);
             if (!marked[i]) {
                 dfs(digraph, i);
 //                System.out.println("Done with vertex:" + i);
@@ -62,17 +62,14 @@ public class DirectedCycle {
         onStack[v] = true;
         marked[v] = true;
 
-//        System.out.println("Stack:" + stack);
         for (int w : digraph.adj(v)) {
-//            System.out.println("Processing adj:" + w);
-            if (isCycle) {
+            if (hasCycle()) {
                 break;
             }
             if (!marked[w]) {
                 edgeTo[w] = v; //edge from V to W
                 dfs(digraph, w);
             } else if (onStack[w]) {
-//                System.out.println(" In Cycle Stack:" + stack + ", v=" + v);
                 cycle = new Stack<>();
                 isCycle = true;
                 for (int x = v; x != w; x = edgeTo[x]) {

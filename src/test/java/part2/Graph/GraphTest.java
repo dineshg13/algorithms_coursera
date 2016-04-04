@@ -1,4 +1,4 @@
-package part2;
+package part2.Graph;
 
 import core.AbstractTest;
 import org.junit.Test;
