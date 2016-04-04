@@ -8,15 +8,18 @@ import java.util.PriorityQueue;
 
 /**
  * Created by dinesh on 4/3/2016.
+ * # Take Next Min Edge
+ * # if Adding Edge doesn't form cycle then add to MST
+ * #
  */
-public class KrusalMST {
+public class KruskalMST {
 
     private PriorityQueue<Edge> priorityQueue;
     private QuickUnion quickUnion;
     private EdgeWeightedGraph graph;
     private List<Edge> edges;
 
-    public KrusalMST(EdgeWeightedGraph graph) {
+    public KruskalMST(EdgeWeightedGraph graph) {
         this.graph = graph;
         quickUnion = new QuickUnion(graph.V());
         priorityQueue = new PriorityQueue<>();
@@ -36,7 +39,7 @@ public class KrusalMST {
             Edge e = priorityQueue.poll();
             int v = e.either();
             int w = e.other(v);
-            if (!quickUnion.connected(v, w)) {
+            if (!quickUnion.connected(v, w)) { // check cycle
                 quickUnion.union(v, w);
                 edges.add(e);
                 numE++;

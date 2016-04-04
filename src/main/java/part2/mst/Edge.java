@@ -19,11 +19,12 @@ public class Edge implements Comparable<Edge> {
         return v;
     }
 
-    public int other(int v) {
-        if (v == this.v) {
+    public int other(int x) {
+        if (x == this.v) {
             return w;
         }
         return v;
+
     }
 
     public double weight() {

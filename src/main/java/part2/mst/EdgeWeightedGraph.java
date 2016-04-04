@@ -66,6 +66,17 @@ public class EdgeWeightedGraph {
         return E;
     }
 
+    public String debugString() {
+        StringBuilder builder = new StringBuilder();
+        for (int v = 0; v < V(); v++) {
+            builder.append("\nVertex: " + v + ", Edges to :");
+            for (Edge w : adj(v)) {
+                builder.append(w + ",");
+            }
+        }
+        return builder.toString();
+    }
+
     public Iterable<Edge> adj(int v) {
         return adj[v];
     }
