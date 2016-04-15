@@ -29,6 +29,13 @@ public class PrintUtils {
         }
     }
 
+    public static <T> void print(T[] ar) {
+        for (int i = 0; i < ar.length; i++) {
+            if (ar[i] != null)
+                System.out.println(i + " -> " + ar[i]);
+        }
+    }
+
     public static void print(boolean[] ar) {
         for (int i = 0; i < ar.length; i++) {
             System.out.println(i + " -> " + ar[i]);

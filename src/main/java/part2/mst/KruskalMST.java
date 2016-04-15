@@ -9,7 +9,7 @@ import java.util.PriorityQueue;
 /**
  * Created by dinesh on 4/3/2016.
  * # Take Next Min Edge
- * # if Adding Edge doesn't form cycle then add to MST
+ * # if Adding Edge doesn't form cycle then insert to MST
  * #
  */
 public class KruskalMST {
