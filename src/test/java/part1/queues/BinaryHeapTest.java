@@ -22,7 +22,7 @@ public class BinaryHeapTest extends AbstractTest {
         PrintUtils.printLineBreak();
 //
 //        PrintUtils.printLineBreak();
-//        PrintUtils.print(heap.getAr());
+//        PrintUtils.print(heap.getKeys());
 //
         while (!heap.isEmpty()) {
             System.out.println(heap.deleteMax());

@@ -1,6 +1,7 @@
 package part2.mst;
 
 import core.AbstractTest;
+import org.junit.Assert;
 import org.junit.Test;
 import utils.In;
 import utils.PrintUtils;
@@ -17,6 +18,7 @@ public class PrimEagerMSTTest extends AbstractTest {
         PrintUtils.printLineBreak();
         PrimEagerMST mst = new PrimEagerMST(graph);
         mst.getEdges().forEach(edge -> System.out.println(edge));
+        Assert.assertTrue(mst.check(graph));
 
     }
 }
